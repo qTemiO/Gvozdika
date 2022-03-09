@@ -7,7 +7,7 @@ session_name = 'Igor'
 client = TelegramClient(session_name, api_id, api_hash)
 chat = '@alfiron'
 async def main(chat):
-    async for message in client.iter_messages(chat, search= 'Украина'):
+    async for message in client.iter_messages(chat, search= 'март'):
         print(message.date, message.text)
 with client:
     client.loop.run_until_complete(main(chat))
