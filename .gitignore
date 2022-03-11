@@ -2,3 +2,4 @@ venv
 *.session
 *.session-journal
 .idea
+result.txt
