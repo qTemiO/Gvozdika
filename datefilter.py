@@ -6,10 +6,10 @@ api_id = 15316406
 api_hash = 'ad62ac5526adf8d79b7d4b5d26f7e93e'
 session_name = 'Igor'
 client = TelegramClient(session_name, api_id, api_hash)
-chat_list = ['https://t.me/voenacher', '@ABUKADET']
+chat_list = ['https://t.me/voenacher', '@alfiron']
 
 
-from_date = datetime.date(2022,3, 8)
+from_date = datetime.date(2022,3, 5)
 to_date = datetime.date(2022, 3, 11)
 date_list = []
 delta = to_date - from_date
@@ -25,7 +25,7 @@ for date in date_list:
         async def get_messages_at_date(chat, date):
             result = []
             tomorrow = date + datetime.timedelta(days=1)
-            async for msg in client.iter_messages(chat, offset_date=tomorrow):
+            async for msg in client.iter_messages(chat, offset_date=tomorrow, search= 'Украина'):
                 edited_date = (msg.date).date()
                 if edited_date == date:
                     one_message_info = [msg.sender.username, str(msg.date), msg.text]
